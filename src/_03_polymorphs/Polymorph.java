@@ -38,9 +38,7 @@ public abstract class Polymorph {
     public int getHeight() {
     	return height;
     }
-    public void update(){
-   	 
-    }
+    public abstract void update();
     
     public abstract void draw(Graphics g);
 }

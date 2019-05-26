@@ -13,5 +13,11 @@ public class BluePolymorph extends Polymorph{
 		g.setColor(Color.blue);
 		g.fillRect(getX(), getY(), getWidth(), getHeight());
 	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 

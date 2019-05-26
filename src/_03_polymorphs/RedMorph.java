@@ -14,5 +14,11 @@ public class RedMorph extends Polymorph  {
 		g.setColor(Color.red);
 		g.fillRect(getX(), getY(), getWidth(), getHeight());
 	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
