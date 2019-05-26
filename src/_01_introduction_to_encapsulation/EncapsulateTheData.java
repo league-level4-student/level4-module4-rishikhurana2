@@ -1,5 +1,6 @@
 package _01_introduction_to_encapsulation;
 
+import org.junit.jupiter.api.Test;
 /*
  * Encapsulation is a way of protecting the data in a class from being
  * unintentionally altered from another class.
@@ -29,6 +30,56 @@ public class EncapsulateTheData {
 	Object memberObj; //can be any object type except String. Strings get turned into objects.
 	
 	public static void main(String[] args) {
-		
+		EncapsulateTheData etd = new EncapsulateTheData();
+		etd.testSetters();
+	}
+	@Test
+	public void testSetters() {
+		setItemsReceived(-9);
+		int ir = getItemsReceived();
+		setDegreesTurned(800);
+		float degrees = getDegreesTurned();
+		setNomenclature("Robot");
+		String name = getNomenclature();
+		setMemberObj(11);
+		Object mobj = getMemberObj();
+		System.out.println(ir);
+		System.out.println(degrees);
+		System.out.println(name);
+		System.out.println(mobj);
+	}
+	public void setItemsReceived(int amount) {
+		if (amount > 0)
+			itemsReceived = amount;
+		else 
+			itemsReceived = 0;
+	}
+	public int getItemsReceived() {
+		return itemsReceived;
+	}
+	public void setDegreesTurned(float degrees) {
+		if (degrees >= 0 && degrees <= 360)
+			degreesTurned = degrees;
+	}
+	public float getDegreesTurned() {
+		return degreesTurned;
+	}
+	public void setNomenclature(String name) {
+		if (name.length() >= 1)
+			nomenclature = name;
+		else 
+			nomenclature = " ";
+	}
+	public String getNomenclature() {
+		return nomenclature;
+	}
+	public void setMemberObj(Object o) {
+		if (!(o instanceof String)) {
+			memberObj = o;
+		} else
+			memberObj = new Object();
+	}
+	public Object getMemberObj() {
+		return memberObj;
 	}
 }
