@@ -1,8 +1,9 @@
 package _03_polymorphs;
 
 import java.awt.Graphics;
+import java.awt.event.MouseListener;
 
-public abstract class Polymorph {
+public abstract class Polymorph implements MouseListener{
     private int x;
     private int y;
     private int width;

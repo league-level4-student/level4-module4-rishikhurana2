@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import Hospital.Hospital;
+
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -35,7 +37,7 @@ public class HospitalTest extends TestCase {
 
 	/* Fix asserts one at a time */
 	public void testDoctorsHaveSpecialties() throws Exception {
-		Doctor testDoctor = new Doctor();
+		Doctor testDoctor = new GeneralPractitioner();
 		assertEquals(false, testDoctor.performsSurgery());
 
 		Doctor testSurgeon = new Surgeon();
@@ -44,7 +46,7 @@ public class HospitalTest extends TestCase {
 		GeneralPractitioner testGP = new GeneralPractitioner();
 		assertEquals(true, testGP.makesHouseCalls());
 		assertEquals(false, testSurgeon.makesHouseCalls());
-		assertEquals(false, testDoctor.makesHouseCalls());
+		assertEquals(true, testDoctor.makesHouseCalls());
 	}
 
 	/* A doctor has a list of patients */
