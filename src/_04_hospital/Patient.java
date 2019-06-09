@@ -16,4 +16,7 @@ public class Patient {
 		else
 			return false;
 	}
+	public void setCared(boolean care) {
+		cared = care;
+	}
 }

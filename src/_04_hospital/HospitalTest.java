@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import Hospital.Hospital;
-
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -20,12 +18,12 @@ import junit.framework.TestCase;
 public class HospitalTest extends TestCase {
 
 	Hospital testHospital = new Hospital();
-
 	public void testAddDoctor() {
 		testHospital.addDoctor(new GeneralPractitioner());
 		testHospital.addDoctor(new GeneralPractitioner());
 		testHospital.addDoctor(new Surgeon());
 		assertEquals(3, testHospital.getDoctors().size());
+		
 	}
 
 	public void testAddPatient() throws Exception {
@@ -84,7 +82,7 @@ public class HospitalTest extends TestCase {
 
 	/* test calling assignPatient when doctor is full throws exception */
 	public void testDoctorsCanOnlyHandle3Patients() throws Exception {
-		Doctor testDoctor = new Doctor();
+		Doctor testDoctor = new GeneralPractitioner();
 		testDoctor.assignPatient(new Patient());
 		testDoctor.assignPatient(new Patient());
 		testDoctor.assignPatient(new Patient());
@@ -99,9 +97,13 @@ assertTrue(testDoctor.getPatients().size() == 3);
 
 	public void test8Patients() throws Exception {
 		// TODO: add 3 doctors to hospital
-
+		for (int i = 0; i < 3; i++) {
+			testHospital.addDoctor(new GeneralPractitioner());
+		}
 		// TODO: add 8 patients to hospital
-
+		for (int i = 0; i < 8; i++) {
+			testHospital.addPatient(new Patient());
+		}
 		// hospital assigns patients to doctors
 		testHospital.assignPatientsToDoctors();
 		// hospital.getDoctors shows doctors have 3, 3, 2 patients

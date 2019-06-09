@@ -13,6 +13,4 @@ public class Surgeon extends Doctor{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-
 }

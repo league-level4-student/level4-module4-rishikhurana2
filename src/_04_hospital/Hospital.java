@@ -22,4 +22,14 @@ public class Hospital {
 	public ArrayList<Patient> getPatients() {
 		return patients;
 	}
+	public void assignPatientsToDoctors() throws DoctorFullException {
+		for (int i = 0; i < doctors.size(); i++) {
+			for (int j = 0; j < patients.size(); j++) {
+				doctors.get(i).assignPatient(patients.get(j));
+				if (doctors.get(i).getPatients().size() == 3) {
+					i = i + 1;
+				}
+			}
+		}
+	}
 }
